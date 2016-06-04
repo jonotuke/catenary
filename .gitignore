@@ -1,0 +1,16 @@
+*.o
+*.so
+*.mex*
+*~
+.Rproj.user
+*.dvi
+*.log
+*.aux
+*.blg
+*.ps
+.DS_Store
+*src-*
+tmp/*
+*pdf
+
+inst/doc

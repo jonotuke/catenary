@@ -1,0 +1,20 @@
+Version 1.1.1
+-------------
+
+Updated so works with new version of ggplot2
+
+Version 1.1
+-----------
+
+MINOR EDIT
+
+* Added Depends: R (>= 2.15.0) to DESCRIPTION so Summary function works fine
+
+Version 1.0
+-------------------------------------------------------------------------
+
+NEW FEATURES
+
+* catenary class with methods to plot and give properties
+
+* fittedCatenary class to create a catenary object from observed data

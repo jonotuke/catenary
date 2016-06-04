@@ -1,0 +1,114 @@
+\documentclass{article}
+%\VignetteIndexEntry{catenary}
+\author{Jono Tuke \& Matt Roughan}
+\title{Getting started with the {\tt catenary} package }
+\begin{document}
+\SweaveOpts{concordance=TRUE}
+\maketitle
+
+\section{Introduction}
+The {\tt catenary} package has been created to let you fit catenaries to observed data, and also to explore how the parameter values of a catenary affects its properties. There are two main classes in the {\tt catenary} package: the {\tt catenary} class and the {\tt fittedCatenary}. 
+
+Recall that the general form of the catenary has three parameters: $c_1,c_2,\lambda$ and is of the form:
+\[
+ y = c_1  \cosh\left( \frac{x-c_2}{c_1} \right) + \lambda
+\]
+
+\section{ Exploring catenaries with parameter values}
+A {\tt catenary} object can be created given the values of $c_1, c_2, $ and $\lambda$ as follows:
+<<fig=TRUE>>=
+library(catenary)
+cat1 <- catenary(c1=1,c2=2,lambda=3,x0=0,x1=4)
+plot(cat1)
+@
+
+You can also get inverted catenaries
+<<fig=TRUE>>=
+cat2 <- catenary(c1=-1,c2=2,lambda=3,x0=0,x1=4)
+plot(cat2)
+@
+
+As well as the {\tt plot()} function, the following functions are available (Table~\ref{tab:functions}).
+
+\begin{center}
+\begin{table}
+\begin{tabular}{l|r}
+Function name & what it does \\\hline
+{\tt L} & gives length of catenary\\
+{\tt vertex} & gives x and y coordinates of vertex\\
+{\tt minmax} & gives min and max values of y of the catenary\\
+{\tt Summary} & bit of everything
+\end{tabular}
+\caption{{\tt catenary} functions}
+\label{tab:functions}
+\end{table}
+\end{center}
+
+<<>>=
+L(cat1)
+vertex(cat1)
+minmax(cat1)
+Summary(cat1)
+@
+
+\section{ Exploring catenaries with just the endpoints}
+Alternatively, you can define a catenary by giving its endpoints and length. If you do not give a length, then you can ask for the natural catenary based on ??(Matt info needed) or the maximum catenary, i.e., the one that just touches the ground
+
+<<fig=TRUE>>=
+left <- c(-2,1)
+right <- c(2,1)
+endpoints <- rbind(left,right)
+endpoints
+cat3 <- catenary(endpoints=endpoints,L=5)
+plot(cat3)
+@
+<<fig=TRUE>>=
+cat4 <- catenary(endpoints=endpoints,type="natural")
+plot(cat4)
+@
+<<fig=TRUE>>=
+cat5 <- catenary(endpoints=endpoints,type="max")
+plot(cat5)
+@
+
+\section{Fitting catenaries to data}
+You can also fit a catenary to observed values of x and y. This will also fit a parabola. It also gives an indication of possible curves based on bootstrap refitting. 
+<<>>=
+x <- runif(100,0,4)
+y <- f(x=x,c1=1,c2=2,lambda=3) + rnorm(100)
+cat6 <- fittedCatenary(x=x,y=y,R=100)
+Summary(cat6)
+@
+
+<<fig=TRUE>>=
+plot(cat6,fit=c("para","cat"),envelope=c("para","cat"))
+@
+
+
+As the class {\tt fittedCatenary} inherits from the class {\tt catenary} you get all the functions in Table~\ref{tab:functions}
+\section{Ctesiphon data}
+The Ctesiphon data is obtained from the photo shown in Figure~\ref{fig:ctesiphon}. From this points were selected from the internal and external arch (see Figure~\ref{internal} and Figure~\ref{external} respectively)
+
+\begin{figure}[htpb]
+  \begin{center}
+		\includegraphics[width=\textwidth]{ctesiphon}
+	\end{center}
+	\caption{Ctesiphon.}
+	\label{fig:ctesiphon}
+\end{figure}
+\begin{figure}[htpb]
+  \begin{center}
+		\includegraphics[width=\textwidth]{ctesiphon_internal}
+	\end{center}
+	\caption{Internal points for Ctesiphon.}
+	\label{fig:internal}
+\end{figure}
+\begin{figure}[htpb]
+  \begin{center}
+		\includegraphics[width=\textwidth]{ctesiphon_external}
+	\end{center}
+	\caption{External points for Ctesiphon.}
+	\label{fig:external}
+\end{figure}
+
+\end{document}
