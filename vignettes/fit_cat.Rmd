@@ -4,7 +4,7 @@ author: "Jono Tuke"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteIndexEntry{Fitting a catenary to data}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -40,7 +40,7 @@ show(sim_data_cat)
 ```
 
 ## Get summary statistics of goodness of fit
-Unfortunately R-square values are not appropriate for non-linear methods, which is how the catenary model is fitted to the data - see for example [why-is-there-no-r-squared-for-nonlinear-regression](http://blog.minitab.com/blog/adventures-in-statistics/why-is-there-no-r-squared-for-nonlinear-regression). Instead I have added a new method `gof()` which will take a fitted catenary object and return the summary statistics like Akaike's information criterion and Bayesian information criterion, which can be used to assess model fit.
+Unfortunately R-square values are not appropriate for non-linear methods, which is how the catenary model is fitted to the data - see for example [why-is-there-no-r-squared-for-nonlinear-regression](http://blog.minitab.com/blog/adventures-in-statistics-2/why-is-there-no-r-squared-for-nonlinear-regression). Instead I have added a new method `gof()` which will take a fitted catenary object and return the summary statistics like Akaike's information criterion and Bayesian information criterion, which can be used to assess model fit.
 
 ```{r}
 gof(sim_data_cat)
