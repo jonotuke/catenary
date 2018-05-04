@@ -138,7 +138,7 @@ methods::setMethod(f='plot',
 )
 #' Method to get points for catenary
 #' 
-#' Gives points for ploting
+#' Gives points for plotting
 #' 
 #' @return data frame of points
 #' @export
