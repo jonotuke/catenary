@@ -1,12 +1,12 @@
 ## ---- warning=FALSE, message=FALSE---------------------------------------
 library(catenary)
-library(dplyr)
-library(magrittr)
-library(ggplot2)
+library(tidyverse)
 
 sim_data <- data_frame(x = runif(100,0,4))
-sim_data %<>% mutate(y = f(x, c1 = 1, c2 = 2, lambda = 3))
-sim_data %<>% mutate(y = y + rnorm(100,0,0.1))
+sim_data  <- sim_data %>% 
+  mutate(y = f(x, c1 = 1, c2 = 2, lambda = 3))
+sim_data  <- sim_data %>% 
+  mutate(y = y + rnorm(100,0,0.1))
 
 sim_data %>% ggplot(aes(x,y)) + geom_point()
 

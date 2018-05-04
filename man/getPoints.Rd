@@ -10,6 +10,6 @@
 data frame of points
 }
 \description{
-Gives points for ploting
+Gives points for plotting
 }
 \keyword{internal}

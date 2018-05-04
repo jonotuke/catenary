@@ -16,7 +16,7 @@ Creates a catenary object from observed data
    \item lambda: y-location parameter 
    \item endpoints: left and right endpoint in data
    frame
-   \item L: length of caternary
+   \item L: length of catenary
    \item obs: data frame of observed data
    \item fitted: fitted points for plots and prediction
    \item ss: sum of squares for fitted parabola and catenary

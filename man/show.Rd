@@ -16,7 +16,7 @@
 
 \item{na.rm}{boolean to remove NAs}
 
-\item{object}{fittedCateary object}
+\item{object}{fittedCatenary object}
 }
 \description{
 gives pretty summary
