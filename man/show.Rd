@@ -2,9 +2,11 @@
 % Please edit documentation in R/catenary.R, R/fittedCatenary.R
 \docType{methods}
 \name{show}
-\alias{catenary-method}
+\alias{show}
 \alias{show}
 \alias{show,}
+\alias{catenary-method}
+\alias{show}
 \alias{show,fittedCatenary-method}
 \title{summary function}
 \arguments{
@@ -24,4 +26,3 @@ show method for fitted Catenary
 \author{
 Jono Tuke, Matthew Roughan
 }
-

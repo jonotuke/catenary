@@ -18,13 +18,13 @@ $$
 where $\epsilon_i \sim N(0,\sigma=0.1)$.
 ```{r, warning=FALSE, message=FALSE}
 library(catenary)
-library(dplyr)
-library(magrittr)
-library(ggplot2)
+library(tidyverse)
 
 sim_data <- data_frame(x = runif(100,0,4))
-sim_data %<>% mutate(y = f(x, c1 = 1, c2 = 2, lambda = 3))
-sim_data %<>% mutate(y = y + rnorm(100,0,0.1))
+sim_data  <- sim_data %>% 
+  mutate(y = f(x, c1 = 1, c2 = 2, lambda = 3))
+sim_data  <- sim_data %>% 
+  mutate(y = y + rnorm(100,0,0.1))
 
 sim_data %>% ggplot(aes(x,y)) + geom_point()
 ```
@@ -40,7 +40,7 @@ show(sim_data_cat)
 ```
 
 ## Get summary statistics of goodness of fit
-Unfortunately R-square values are not appropriate for non-linear methods, which is how the catenary model is fitted to the data - see for example [why-is-there-no-r-squared-for-nonlinear-regression](http://blog.minitab.com/blog/adventures-in-statistics/why-is-there-no-r-squared-for-nonlinear-regression). Instead I have added a new method `gof()` which will take a fitted catenary object and return the summary statistics like Akaike's information criterion and Bayesian information criterion, which can be used to access model fit.
+Unfortunately R-square values are not appropriate for non-linear methods, which is how the catenary model is fitted to the data - see for example [why-is-there-no-r-squared-for-nonlinear-regression](http://blog.minitab.com/blog/adventures-in-statistics/why-is-there-no-r-squared-for-nonlinear-regression). Instead I have added a new method `gof()` which will take a fitted catenary object and return the summary statistics like Akaike's information criterion and Bayesian information criterion, which can be used to assess model fit.
 
 ```{r}
 gof(sim_data_cat)

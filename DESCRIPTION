@@ -14,8 +14,11 @@ Depends: R (>= 2.15.0),
 Imports:
     ggplot2,
     boot,
-    methods
-RoxygenNote: 5.0.1
+    methods, 
+    tidyverse, 
+    dplyr, 
+    broom
+RoxygenNote: 6.0.1
 Suggests: knitr,
     rmarkdown
 VignetteBuilder: knitr

@@ -22,10 +22,10 @@ Creates a catenary object from observed data
    \item ss: sum of squares for fitted parabola and catenary
 }
 }
+
 \examples{
 getSlots("fittedCatenary")
 }
 \author{
 Jono Tuke, Matthew Roughan
 }
-

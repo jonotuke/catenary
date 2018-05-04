@@ -17,4 +17,3 @@ and the image with the points overlaid can be found in the inst folder
 }
 }
 \keyword{datasets}
-

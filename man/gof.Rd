@@ -3,6 +3,7 @@
 \docType{methods}
 \name{gof}
 \alias{gof}
+\alias{gof}
 \alias{gof,catenary-method}
 \title{Get goodness of fit statistics for fitted catenary}
 \arguments{
@@ -14,4 +15,3 @@ data frame of summary statistics
 \description{
 Returns data frame of summary stats for models
 }
-

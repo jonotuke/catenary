@@ -23,7 +23,9 @@ methods::setClass(
     L="numeric"
   ),
   validity = function(object){
-    if(length(object@c1) >1 | length(object@c2) > 1 | length(object@lambda) > 1){
+    if(length(object@c1) >1 | 
+       length(object@c2) > 1 | 
+       length(object@lambda) > 1){
       stop ("c1, c2, and lambda must all be scalars")
     }
     if(length(object@c1) == 0 | length(object@c2) == 0 | 
