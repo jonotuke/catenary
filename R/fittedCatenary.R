@@ -143,7 +143,7 @@ methods::setMethod(f = "show", signature = "fittedCatenary",
 #'
 #' Returns data frame of summary stats for models
 #'
-#' @param x A \code{fittedCatenary} object
+#' @param x A fittedCatenary object
 #' @return data frame of summary statistics
 #' @export
 #' @docType methods
@@ -151,9 +151,12 @@ methods::setMethod(f = "show", signature = "fittedCatenary",
 methods::setGeneric("gof",function(x) {
   standardGeneric("gof")
 })
+#' @aliases gof,fittedCatenary-method
 #' @rdname gof
-#' @aliases gof,catenary-method
 #' @name gof
-methods::setMethod("gof", "fittedCatenary", function(x){
-  slot(x,"gof")
-})
+methods::setMethod(f = "gof", 
+                   signature = "fittedCatenary", 
+                   definition = function(x){
+                     slot(x,"gof")
+                   }
+)

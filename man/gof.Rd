@@ -4,10 +4,10 @@
 \name{gof}
 \alias{gof}
 \alias{gof}
-\alias{gof,catenary-method}
+\alias{gof,fittedCatenary-method}
 \title{Get goodness of fit statistics for fitted catenary}
 \arguments{
-\item{x}{A \code{fittedCatenary} object}
+\item{x}{A fittedCatenary object}
 }
 \value{
 data frame of summary statistics

@@ -261,7 +261,7 @@ methods::setMethod("L", "catenary", function(x){
 methods::setGeneric("show", function(object) {
   standardGeneric("show")
 })
-#' @aliases show, catenary-method
+#' @aliases show,catenary-method
 #' @rdname show
 #' @name show
 methods::setMethod(f='show',

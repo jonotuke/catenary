@@ -4,8 +4,7 @@
 \name{show}
 \alias{show}
 \alias{show}
-\alias{show,}
-\alias{catenary-method}
+\alias{show,catenary-method}
 \alias{show}
 \alias{show,fittedCatenary-method}
 \title{summary function}
