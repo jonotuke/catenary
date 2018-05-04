@@ -2,7 +2,7 @@ Package: catenary
 Type: Package
 Title: Fits a Catenary to Given Points
 Version: 1.1.2
-Date: 2015-11-18
+Date: 2018-05-04
 Authors@R: c(
     person("Jonathan", "Tuke",email ="simon.tuke@adelaide.edu.au", role = c("aut", "cre")),
     person("Matthew", "Roughan",email ="matthew.roughan@adelaide.edu.au", role = "aut"))
